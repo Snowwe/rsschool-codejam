@@ -1,5 +1,7 @@
 const assert = require('assert');
-const sumOfOther= require('./src/sumOfOther.js');
+const sumOfOther = require('./src/sumOfOther.js');
+const make = require('./src/make.js');
+const recursion = require('./src/recursion.js');
 
 describe(('Sum of other'), () => {
 
@@ -9,3 +11,13 @@ describe(('Sum of other'), () => {
     })
 
 });
+
+describe('Make', () => {
+    it('1', () => {
+        const sum = (a, b) => a + b;
+        const result = make(15)(34, 21, 666)(41)(sum);
+        assert.equal(result, 777);
+    })
+
+});
+
