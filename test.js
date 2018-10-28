@@ -37,12 +37,36 @@ describe(('Sum of other'), () => {
 });
 
 describe('Make', () => {
-    it('1', () => {
+    it('1 plus', () => {
         const sum = (a, b) => a + b;
         const result = make(15)(34, 21, 666)(41)(sum);
         assert.equal(result, 777);
-    })
-
+    });
+    it('2 plus', () => {
+        const sum = (a, b) => a + b;
+        const result = make(1)(2, 3, 4, 5)(6, 7, 8)(sum);
+        assert.equal(result, 36);
+    });
+    it('3 minus', () => {
+        const minus = (a, b) => a - b;
+        const result = make(25)(5, 2, 3, 10)(minus);
+        assert.equal(result, 5);
+    });
+    it('4 multiply', () => {
+        const multiply = (a, b) => a * b;
+        const result = make(5, 6)(2, 3, 4)(7, 8)(multiply);
+        assert.equal(result, 40320);
+    });
+    it('5 divide', () => {
+        const divide = (a, b) => a / b;
+        const result = make(100, 2)(5)(divide);
+        assert.equal(result, 10);
+    });
+    it('6 degree', () => {
+        const degree = (a, b) => a ** b;
+        const result = make(3, 2)(3)(degree);
+        assert.equal(result, 729);
+    });
 });
 
 describe('Recursion', () => {
